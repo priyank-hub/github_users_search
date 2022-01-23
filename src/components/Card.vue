@@ -36,7 +36,7 @@
             <b-input-group class="align-items-center">
               <b-input-group-prepend>
                 <b-button variant="" class="border-0 px-1 px-lg-3" style="background-color: transparent">
-                  <i class="fas fa-search text-primary"></i>
+                  <i class="fas fa-search text-primary"></i> 
                 </b-button>
               </b-input-group-prepend>
               
