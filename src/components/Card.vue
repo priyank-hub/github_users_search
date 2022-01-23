@@ -4,7 +4,7 @@
       <div class="row justify-content-between my-3">
         <div class="col-6 text-left py-0">
           <span style="font-weight: 900; font-size: 20px">
-            DevFinder
+            GitFinder
           </span>
         </div>
         <div class="col-6 text-right py-0">
