@@ -318,7 +318,7 @@ export default {
       console.log('searching...')
       try {
         let res =  await axios.get(`https://api.github.com/users/${this.search}`)
-        // console.log(res);
+        console.log('res', res);
         this.user.name = res.data.name;
         this.user.email = res.data.email;
         this.user.joined_date = res.data.created_at;
@@ -359,8 +359,8 @@ export default {
         this.error = true;
       }
 
-      const repos = await axios.get('https://api.github.com/users/priyank-hub/repos');
-      console.log(repos);
+      // const repos = await axios.get('https://api.github.com/users/priyank-hub/repos');
+      // console.log(repos);
     },
     joined(date) {
       console.log();
