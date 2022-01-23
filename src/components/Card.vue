@@ -356,9 +356,14 @@ export default {
         this.error = true;
       }
 
-      const repo = await axios.get('https://api.github.com/users/' + this.user.username + '/repos');
-      console.log(repo.data);
-      this.repos = repo.data;
+      try {
+        const repo = await axios.get('https://api.github.com/users/' + this.user.username + '/repos');
+        // console.log('repo', repo.data);
+        this.repos = repo.data;  
+      } catch (error) {
+        console.log('error', error);
+        this.error = true;
+      }
     },
     joined(date) {
       console.log();
@@ -380,10 +385,6 @@ export default {
 }
 </style>
 <style>
-.v-text-field>.v-input__control>.v-input__slot:before {
-  /* display: none !important; */
-}
-
 .v-text-field__slot {
   font-size: 13px;
 }
@@ -394,5 +395,9 @@ export default {
 
 .v-input__slot {
   margin-bottom: 0px !important;
+}
+
+.v-text-field>.v-input__control>.v-input__slot:before {
+  border-color: rgb(191, 191, 191);
 }
 </style>
