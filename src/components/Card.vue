@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">      
-      <div class="row justify-content-between">
+      <div class="row justify-content-between my-3">
         <div class="col-6 text-left py-0">
           <span style="font-weight: 900; font-size: 20px">
             DevFinder
@@ -27,28 +27,29 @@
         </div>
       </div>
 
-      <div class="row my-2 p-1">
+      <div class="row my-2">
         <div class="col-12">
           <v-card
             elevation="4"
-            class="section"
+            class="section px-4"
           >
             <b-input-group class="align-items-center">
-              <b-input-group-prepend>
-                <b-button variant="" class="border-0 px-1 px-lg-3" style="background-color: transparent">
+              <!-- <b-input-group-prepend>
+                <b-button variant="" class="border-0" style="background-color: transparent">
                   <i class="fas fa-search text-primary"></i> 
                 </b-button>
-              </b-input-group-prepend>
+              </b-input-group-prepend> -->
               
               <v-text-field
                 v-model="search"
                 :error="error"
-                class="mx-lg-1 mx-md-2 mx-2"
+                class="mx-lg-4 mx-md-2"
+                style=""
                 placeholder="Search github username..."
                 required
               ></v-text-field>
 
-              <b-input-group-append class="px-1">
+              <b-input-group-append class="">
                 <b-button class="border-0 py-2 px-4 section" variant="primary" @click="searchUser">
                   <span style="font-size: 15px">
                     Search
@@ -128,49 +129,51 @@
 
               <div class="row my-2">
                 <div class="col-4 col-md-3 col-lg-2 d-none d-md-none d-lg-block py-0"></div>
-                <div class="col-12 col-md-12 col-lg-10 py-0">
+                <div class="col-12 col-md-12 col-lg-10 py-0 inner-card">
                   
                   <v-card
                     elevation="4"
                     class="section"
                   >
-                    <div class="d-flex flex-row my-2">
-                      <div class="col-4 text-center text-md-center text-lg-left">
-                        <div>
-                          <span style="font-size: 13px">
-                            Repos
-                          </span>
+                    <div class="container my-2">
+                      <div class="row">
+                        <div class="col-12 col-md-4 text-center text-md-center text-lg-left">
+                          <div>
+                            <span style="font-size: 13px">
+                              Repos
+                            </span>
+                          </div>
+                          <div>
+                            <span style="font-size: 20px; font-weight: 900">
+                              {{ user.repos }}
+                            </span>
+                          </div>
                         </div>
-                        <div>
-                          <span style="font-size: 20px; font-weight: 900">
-                            {{ user.repos }}
-                          </span>
-                        </div>
-                      </div>
 
-                      <div class="col-4 text-center text-md-center text-lg-center">
-                        <div>
-                          <span style="font-size: 13px">
-                            Followers
-                          </span>
+                        <div class="col-12 col-md-4 text-center text-md-center text-lg-center">
+                          <div>
+                            <span style="font-size: 13px">
+                              Followers
+                            </span>
+                          </div>
+                          <div>
+                            <span style="font-size: 20px; font-weight: 900">
+                              {{ user.followers }}
+                            </span>
+                          </div>
                         </div>
-                        <div>
-                          <span style="font-size: 20px; font-weight: 900">
-                            {{ user.followers }}
-                          </span>
-                        </div>
-                      </div>
 
-                      <div class="col-4 text-center text-md-center text-lg-right">
-                        <div>
-                          <span style="font-size: 13px">
-                            Following
-                          </span>
-                        </div>
-                        <div>
-                          <span style="font-size: 20px; font-weight: 900">
-                            {{ user.following }}
-                          </span>
+                        <div class="col-12 col-md-4 text-center text-md-center text-lg-right">
+                          <div>
+                            <span style="font-size: 13px">
+                              Following
+                            </span>
+                          </div>
+                          <div>
+                            <span style="font-size: 20px; font-weight: 900">
+                              {{ user.following }}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -221,7 +224,7 @@
                       </span>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-6 my-0">
+                    <div class="col-12 col-md-6 col-lg-6 my-0 pb-0">
                       <span class="" v-if="user.link">
                         <span>
                           <i class="fas fa-link"></i>
@@ -381,6 +384,14 @@ export default {
 <style>
 .v-text-field>.v-input__control>.v-input__slot:before {
   /* display: none !important; */
+}
+
+.v-text-field__slot {
+  font-size: 13px;
+}
+
+.inner-card .section.v-card.v-sheet.theme--dark.elevation-4 {
+  background-color: #121212;
 }
 
 .v-input__slot {

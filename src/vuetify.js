@@ -7,5 +7,5 @@ Vue.use(Vuetify)
 // const opts = {}
 
 export default new Vuetify({
-    theme: { dark: true },
+    theme: { dark: false },
 })
